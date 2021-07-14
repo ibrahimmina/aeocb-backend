@@ -36,5 +36,5 @@ require('./app/routes/countries.routes.js')(app);
 
 // listen for requests
 app.listen(process.env.PORT || 5000, () => {
-    console.log("Server is listening on port" . process.env.PORT);
+    console.log("Server is listening on port");
 });
