@@ -35,6 +35,8 @@ app.get('/', (req, res) => {
 require('./app/routes/countries.routes.js')(app);
 
 // listen for requests
-app.listen(process.env.PORT || 5000, () => {
-    console.log("Server is listening on port");
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
