@@ -26,7 +26,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
-
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 // define a simple route
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
