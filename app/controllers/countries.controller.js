@@ -76,7 +76,7 @@ exports.update = (req, res) => {
 
 
     // Find note and update it with the request body
-    Country.findByIdAndUpdate(req.params. countryId, {
+    Country.findByIdAndUpdate(req.params.countryId, {
         code: req.body.code, 
         name: req.body.name,
         status: req.body.status
