@@ -74,12 +74,6 @@ exports.findOne = (req, res) => {
 // Update a note identified by the noteId in the request
 exports.update = (req, res) => {
 
-    // Validate Request
-    if(!req.body.content) {
-        return res.status(400).send({
-            message: "Note content can not be empty"
-        });
-    }
 
     // Find note and update it with the request body
     Country.findByIdAndUpdate(req.params. countryId, {
