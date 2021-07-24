@@ -8,10 +8,10 @@ module.exports = (app) => {
     app.get('/countries', countries.findAll);
 
     // Retrieve a single Note with noteId
-    app.get('/countries/: countryId', countries.findOne);
+    app.get('/countries/:countryId', countries.findOne);
 
     // Update a Note with noteId
-    app.put('/countries/: countryId', countries.update);
+    app.put('/countries/:countryId', countries.update);
 
     // Delete a Note with noteId
     app.delete('/countries/:countryId', countries.delete);
