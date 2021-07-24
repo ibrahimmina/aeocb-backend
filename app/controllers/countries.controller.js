@@ -52,7 +52,7 @@ exports.findOne = (req, res) => {
 
     Country.findById(req.params.countryId)
     .then(country => {
-        if(!note) {
+        if(!country) {
             return res.status(404).send({
                 message: "Note not found with id " + req.params.countryId
             });            
@@ -88,7 +88,7 @@ exports.update = (req, res) => {
         status: req.body.status
     }, {new: true})
     .then(country => {
-        if(! country) {
+        if(!country) {
             return res.status(404).send({
                 message: "Note not found with id " + req.params.countryId
             });
@@ -112,7 +112,7 @@ exports.delete = (req, res) => {
 
     Country.findByIdAndRemove(req.params.countryId)
     .then(country => {
-        if(! country) {
+        if(!country) {
             return res.status(404).send({
                 message: "Note not found with id " + req.params.countryId
             });
