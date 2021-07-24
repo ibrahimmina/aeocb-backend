@@ -87,7 +87,7 @@ exports.update = (req, res) => {
                 message: "Note not found with id " + req.params.countryId
             });
         }
-        res.send(note);
+        res.send(country);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
