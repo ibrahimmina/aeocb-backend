@@ -12,9 +12,9 @@ exports.create = (req, res) => {
 
     // Create a Note
     const country = new Country({
-        code: req.body.code, 
-        name: req.body.name,
-        status: req.body.status
+        code: req.body.code.value, 
+        name: req.body.name.value,
+        status: req.body.status.value
     });
     
   
